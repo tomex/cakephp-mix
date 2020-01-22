@@ -1,11 +1,12 @@
 <?php
+declare(strict_types=1);
 
 namespace CakeMix\Test\TestCase\View\Helper;
 
-use CakeMix\View\Helper\MixHelper;
 use Cake\Routing\Router;
 use Cake\TestSuite\TestCase;
 use Cake\View\View;
+use CakeMix\View\Helper\MixHelper;
 
 class MixHelperTest extends TestCase
 {
@@ -16,18 +17,18 @@ class MixHelperTest extends TestCase
      */
     public $Mix;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         Router::connect('/:controller/:action/*');
         $this->Mix = new MixHelper(new View());
         $this->Mix->setConfig([
             'hotPath' => TEST_APP_DIR . 'hot',
-            'manifestPath' => TEST_APP_DIR . 'mix-manifest.json'
+            'manifestPath' => TEST_APP_DIR . 'mix-manifest.json',
         ]);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         parent::tearDown();
     }

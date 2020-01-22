@@ -1,15 +1,17 @@
-# Mix plugin for CakePHP3
+# Mix plugin for CakePHP4
 
-Helper to use [laravel-mix](https://github.com/JeffreyWay/laravel-mix) with CakePHP3.
+Helper to use [laravel-mix](https://github.com/JeffreyWay/laravel-mix) with CakePHP4.
 
 This is similar to the [mix()](https://readouble.com/laravel/5.5/en/helpers.html#method-mix) function of Laravel.
+
+Fork of [mosaxiv/cakephp-mix](https://github.com/mosaxiv/cakephp-mix).
 
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 ## Requirements
 
-- PHP 7.0+
-- CakePHP 3.4+
+- PHP 7.2+
+- CakePHP 4.0+
 
 ## Installation
 
@@ -18,7 +20,8 @@ You can install this plugin into your CakePHP application using [composer](http:
 The recommended way to install composer packages is:
 
 ```
-composer require mosaxiv/cakephp-mix
+composer config repositories.mosaxiv/cakephp-mix vcs https://github.com/tomex/cakephp-mix
+composer require mosaxiv/cakephp-mix:dev-4x
 ```
 
 ## Usage
@@ -28,6 +31,7 @@ composer require mosaxiv/cakephp-mix
 load Helper
 ```php
 // src/View/AppView.php
+declare(strict_types=1);
 
 namespace App\View;
 
@@ -35,7 +39,7 @@ use Cake\View\View;
 
 class AppView extends View
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->loadHelper('CakeMix.Mix');
     }

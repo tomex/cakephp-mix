@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace CakeMix\View\Helper;
 
@@ -20,7 +21,7 @@ class MixHelper extends Helper
      */
     public $helpers = [
         'Url',
-        'Html'
+        'Html',
     ];
 
     /**
@@ -30,7 +31,7 @@ class MixHelper extends Helper
      */
     protected $_defaultConfig = [
         'hotPath' => WWW_ROOT . 'hot',
-        'manifestPath' => WWW_ROOT . 'mix-manifest.json'
+        'manifestPath' => WWW_ROOT . 'mix-manifest.json',
     ];
 
     /**
@@ -38,7 +39,7 @@ class MixHelper extends Helper
      * @return string
      * @throws \Exception
      */
-    public function script(string $path)
+    public function script(string $path): string
     {
         if (file_exists($this->getConfig('hotPath'))) {
             $hotUrl = file_get_contents($this->getConfig('hotPath'));
@@ -54,7 +55,7 @@ class MixHelper extends Helper
      * @return string
      * @throws \Exception
      */
-    public function css(string $path)
+    public function css(string $path): string
     {
         if (file_exists($this->getConfig('hotPath'))) {
             $hotUrl = file_get_contents($this->getConfig('hotPath'));
@@ -71,7 +72,7 @@ class MixHelper extends Helper
      * @return string
      * @throws \Exception
      */
-    protected function _mix(string $path, string $method)
+    protected function _mix(string $path, string $method): string
     {
         static $manifests = [];
 
@@ -95,7 +96,7 @@ class MixHelper extends Helper
      * @return string
      * @throws \Exception
      */
-    public function htmlScript(string $path, array $options = [])
+    public function htmlScript(string $path, array $options = []): string
     {
         return $this->Html->script($this->script($path), $options);
     }
@@ -106,7 +107,7 @@ class MixHelper extends Helper
      * @return string
      * @throws \Exception
      */
-    public function htmlCss(string $path, array $options = [])
+    public function htmlCss(string $path, array $options = []): string
     {
         return $this->Html->css($this->css($path), $options);
     }

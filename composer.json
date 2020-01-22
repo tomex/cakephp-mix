@@ -1,6 +1,6 @@
 {
   "name": "mosaxiv/cakephp-mix",
-  "description": "Helper to use laravel-mix with CakePHP3",
+  "description": "Helper to use laravel-mix with CakePHP4",
   "type": "cakephp-plugin",
   "keywords": [
       "cakephp",
@@ -15,11 +15,11 @@
      "source": "https://github.com/mosaxiv/cakephp-mix"
   },
   "require": {
-    "cakephp/cakephp": "~3.4"
+    "cakephp/cakephp": "^4.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^5.7|^6.0",
-    "cakephp/cakephp-codesniffer": "^3.0"
+    "phpunit/phpunit": "^8.5",
+    "cakephp/cakephp-codesniffer": "^4.0.0"
   },
   "autoload": {
     "psr-4": {
