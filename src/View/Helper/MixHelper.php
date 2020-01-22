@@ -93,10 +93,10 @@ class MixHelper extends Helper
     /**
      * @param string $path Script path
      * @param array $options Options array
-     * @return string
+     * @return string|null
      * @throws \Exception
      */
-    public function htmlScript(string $path, array $options = []): string
+    public function htmlScript(string $path, array $options = []): ?string
     {
         return $this->Html->script($this->script($path), $options);
     }
@@ -104,10 +104,10 @@ class MixHelper extends Helper
     /**
      * @param string $path Css path
      * @param array $options Options array
-     * @return string
+     * @return string|null
      * @throws \Exception
      */
-    public function htmlCss(string $path, array $options = []): string
+    public function htmlCss(string $path, array $options = []): ?string
     {
         return $this->Html->css($this->css($path), $options);
     }
